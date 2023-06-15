@@ -2,8 +2,8 @@ FROM ubuntu:22.10
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG JAR_LOCATION=./forge.jar
-ARG UID=1000
-ARG GID=1000
+ARG PUID=1000
+ARG PGID=1000
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
@@ -11,8 +11,8 @@ RUN apt-get update -y \
 
 EXPOSE 25565
 
-RUN useradd minecraft -ms /bin/bash -u $UID
-RUN groupmod -g $GID minecraft
+RUN useradd minecraft -ms /bin/bash -u $PUID
+RUN groupmod -g $PGID minecraft
 ENV HOME=/home/minecraft
 USER minecraft
 
