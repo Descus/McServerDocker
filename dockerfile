@@ -21,7 +21,7 @@ WORKDIR $HOME/server
 USER root
 
 ARG JAR_LOCATION=./forge.jar
-COPY ${JAR_LOCATION} ./forge.jar
+ADD ${JAR_LOCATION} ./forge.jar
 COPY eula.txt .
 RUN chown -R minecraft:minecraft /home/minecraft
 
