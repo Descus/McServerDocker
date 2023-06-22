@@ -20,7 +20,7 @@ WORKDIR $HOME/server
 
 USER root
 
-ARG JAR_LOCATION=https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.2.14/forge-1.19.2-43.2.14-installer.jar
+ARG JAR_LOCATION=./forge.jar
 ADD ${JAR_LOCATION} ./forge.jar
 COPY eula.txt .
 RUN chown -R minecraft:minecraft /home/minecraft
