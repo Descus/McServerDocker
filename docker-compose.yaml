@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  minecraft-server:
+    container_name: Minecraft-Server
+    build:
+      context: .
+      args:
+        JAR_LOCATION: https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.1.46/forge-1.20.1-47.1.46-installer.jar
+      tags:
+        - "mc-forge:1.20.1"
+    volumes:
+      - /games/minecraft:/home/minecraft
+    ports:
+      - 25565:25565
+    
